@@ -1,0 +1,37 @@
+{
+    "columns": [
+        {
+            "autoIncrement": false,
+            "description": "",
+            "name": "id",
+            "nullable": false,
+            "primaryKey": true,
+            "type": "INT",
+            "unique": false
+        },
+        {
+            "autoIncrement": false,
+            "description": "",
+            "name": "name",
+            "nullable": true,
+            "primaryKey": false,
+            "type": "VARCHAR",
+            "unique": false
+        },
+        {
+            "autoIncrement": false,
+            "description": "",
+            "name": "age",
+            "nullable": true,
+            "primaryKey": false,
+            "type": "INT",
+            "unique": false
+        }
+    ],
+    "constraints": {
+    },
+    "description": "",
+    "isTemp": false,
+    "name": "users",
+    "rowCount": 0
+}

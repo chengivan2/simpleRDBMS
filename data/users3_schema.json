@@ -1,0 +1,46 @@
+{
+    "columns": [
+        {
+            "autoIncrement": false,
+            "description": "",
+            "name": "id",
+            "nullable": false,
+            "primaryKey": false,
+            "type": "VARCHAR",
+            "unique": false
+        },
+        {
+            "autoIncrement": false,
+            "description": "",
+            "name": "email",
+            "nullable": false,
+            "primaryKey": false,
+            "type": "VARCHAR",
+            "unique": false
+        },
+        {
+            "autoIncrement": false,
+            "description": "",
+            "name": "age",
+            "nullable": true,
+            "primaryKey": false,
+            "type": "VARCHAR",
+            "unique": false
+        },
+        {
+            "autoIncrement": false,
+            "description": "",
+            "name": "created_date",
+            "nullable": false,
+            "primaryKey": false,
+            "type": "VARCHAR",
+            "unique": false
+        }
+    ],
+    "constraints": {
+    },
+    "description": "",
+    "isTemp": false,
+    "name": "users3",
+    "rowCount": 0
+}

@@ -1,0 +1,21 @@
+{
+    "rowCount": 3,
+    "rows": [
+        {
+            "id": "1",
+            "price": "999.99",
+            "product_name": "Laptop"
+        },
+        {
+            "id": "2",
+            "price": "29.99",
+            "product_name": "Mouse"
+        },
+        {
+            "id": "3",
+            "price": "79.99",
+            "product_name": "Keyboard"
+        }
+    ],
+    "tableName": "products"
+}

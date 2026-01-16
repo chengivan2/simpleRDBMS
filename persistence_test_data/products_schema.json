@@ -1,0 +1,40 @@
+{
+    "columns": [
+        {
+            "autoIncrement": false,
+            "description": "",
+            "name": "id",
+            "nullable": false,
+            "primaryKey": true,
+            "type": "INT",
+            "unique": false
+        },
+        {
+            "autoIncrement": false,
+            "description": "",
+            "name": "product_name",
+            "nullable": true,
+            "primaryKey": false,
+            "type": "VARCHAR",
+            "unique": false
+        },
+        {
+            "autoIncrement": false,
+            "description": "",
+            "name": "price",
+            "nullable": true,
+            "primaryKey": false,
+            "type": "DECIMAL",
+            "unique": false
+        }
+    ],
+    "constraints": {
+        "primaryKey": [
+            "id"
+        ]
+    },
+    "description": "",
+    "isTemp": false,
+    "name": "products",
+    "rowCount": 0
+}

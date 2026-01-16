@@ -1,0 +1,20 @@
+{
+    "users": [
+        {
+            "isActive": true,
+            "isAdmin": true,
+            "passwordHash": "{1a55d7c8-7d93-4714-90b3-094511d096e6}:db7c5027a01be7222f820bf090bc3ddb52ef44e45915786f4bcf33e2328a419d",
+            "permissions": [
+            ],
+            "username": "admin"
+        },
+        {
+            "isActive": true,
+            "isAdmin": true,
+            "passwordHash": "{4f079f01-1bcd-4706-a6f2-0766ff896275}:c09db994c67a6b9d78569ee9d9ace2d37602ed660dbaec9fdfe4c7361cd7356b",
+            "permissions": [
+            ],
+            "username": "ivan"
+        }
+    ]
+}

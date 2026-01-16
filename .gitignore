@@ -1,0 +1,61 @@
+# Build directories
+build/
+cmake-build-*/
+out/
+.vs/
+
+# Qt files
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*.moc
+
+# IDEs
+.idea/
+.vscode/
+*.pro.user
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+.directory
+
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+
+# Database files
+*.db
+*.sqlite
+*.rdbms
+
+# Logs
+logs/
+*.log
+
+# CMake cache
+.cmake/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# Generated files
+*.o
+*.obj
+*.d
+
+# Dependencies
+.conan/
+vcpkg_installed/
+
+# Misc
+*.core
+*.su
+gmon.out
