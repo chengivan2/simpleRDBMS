@@ -3,6 +3,7 @@
 Thank you for your interest in contributing to SimpleRDBMS! This document outlines guidelines and processes for contributing.
 
 ## Table of Contents
+
 - [Code of Conduct](#code-of-conduct)
 - [Getting Started](#getting-started)
 - [Development Workflow](#development-workflow)
@@ -18,6 +19,7 @@ Thank you for your interest in contributing to SimpleRDBMS! This document outlin
 ## Code of Conduct
 
 SimpleRDBMS is committed to providing a welcoming and inclusive environment. All contributors are expected to:
+
 - Be respectful and constructive
 - Welcome feedback and different perspectives
 - Focus on what's best for the community
@@ -28,6 +30,7 @@ SimpleRDBMS is committed to providing a welcoming and inclusive environment. All
 ## Getting Started
 
 ### Prerequisites
+
 - C++ 17 knowledge
 - Familiarity with Qt6
 - Git and GitHub
@@ -36,29 +39,27 @@ SimpleRDBMS is committed to providing a welcoming and inclusive environment. All
 ### Setup Development Environment
 
 1. **Fork the Repository**
+
    ```bash
    # On GitHub, click "Fork" button
    ```
 
-2. **Clone Your Fork**
+2. **Clone the Repository**
+
    ```bash
-   git clone https://github.com/your-username/simplerdbms.git
-   cd simplerdbms
+   git clone https://github.com/chengivan2/simpleRDBMS.git
+   cd simpleRDBMS
    ```
 
-3. **Add Upstream Remote**
-   ```bash
-   git remote add upstream https://github.com/simplerdbms/simplerdbms.git
-   ```
+3. **Build the Project**
 
-4. **Build the Project**
    ```bash
    # Follow BUILDING.md for your platform
    ./build.sh  # Linux/macOS
    .\build.bat # Windows
    ```
 
-5. **Verify Build**
+4. **Verify Build**
    ```bash
    ./bin/SimpleRDBMS
    ```
@@ -117,6 +118,7 @@ cmake --build . --target coverage  # if available
 ### Naming Conventions
 
 **Classes:**
+
 ```cpp
 class TableManager {
     // PascalCase for class names
@@ -124,6 +126,7 @@ class TableManager {
 ```
 
 **Methods/Functions:**
+
 ```cpp
 void executeQuery();           // camelCase
 void setTableName();           // setters
@@ -132,6 +135,7 @@ int getColumnCount();          // getters
 ```
 
 **Member Variables:**
+
 ```cpp
 private:
     QString tableName;         // camelCase, no prefix
@@ -140,12 +144,14 @@ private:
 ```
 
 **Constants:**
+
 ```cpp
 const int MAX_TABLE_SIZE = 1000;
 const QString DEFAULT_PATH = "./data";
 ```
 
 **Macros:**
+
 ```cpp
 #define LOG_ERROR(msg) Logger::instance().error(msg)
 #define MAX_COLUMNS 256
@@ -154,9 +160,11 @@ const QString DEFAULT_PATH = "./data";
 ### Code Formatting
 
 **Indentation:**
+
 - Use 4 spaces (no tabs)
 
 **Braces:**
+
 ```cpp
 // Class definition
 class MyClass {
@@ -178,10 +186,12 @@ for (int i = 0; i < count; ++i) {
 ```
 
 **Line Length:**
+
 - Target: 80-100 characters
 - Hard limit: 120 characters
 
 **Spacing:**
+
 ```cpp
 // Operators
 int result = a + b;
@@ -198,12 +208,13 @@ std::unique_ptr<TableSchema> schema;
 ### Comments
 
 **Doxygen-style (public methods):**
+
 ```cpp
 /**
  * @brief Executes a SQL query
  * @param query The SQL query to execute
  * @return QueryResult containing results or error
- * 
+ *
  * @throws std::invalid_argument if query is empty
  * @note This method is thread-safe
  */
@@ -211,6 +222,7 @@ std::unique_ptr<QueryResult> execute(const QString& query);
 ```
 
 **Inline comments:**
+
 ```cpp
 // Use // for single-line comments
 // Explain the "why", not the "what"
@@ -293,7 +305,7 @@ Fixes #123
 
 - **Type:** feat, fix, docs, style, refactor, perf, test, chore
 - **Scope:** parser, core, storage, ui, utils, etc.
-- **Subject:** 
+- **Subject:**
   - Imperative mood ("add", not "adds" or "added")
   - Don't capitalize first letter
   - No period at end
@@ -323,18 +335,21 @@ test(core): add constraint validation tests
 ### Before Submitting
 
 1. **Update with upstream:**
+
    ```bash
    git fetch upstream
    git rebase upstream/main
    ```
 
 2. **Run all tests:**
+
    ```bash
    cd build
    ctest --output-on-failure
    ```
 
 3. **Build successfully:**
+
    ```bash
    cmake --build . --config Release
    ```
@@ -347,6 +362,7 @@ test(core): add constraint validation tests
 ### Creating a PR
 
 1. **Push to your fork:**
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -357,23 +373,29 @@ test(core): add constraint validation tests
    - Explain changes and motivation
 
 3. **PR Template** (include this):
+
    ```markdown
    ## Description
+
    Brief description of changes
-   
+
    ## Type of Change
+
    - [ ] Bug fix
    - [ ] New feature
    - [ ] Breaking change
    - [ ] Documentation
-   
+
    ## Related Issues
+
    Fixes #123
-   
+
    ## Testing
+
    How to test these changes
-   
+
    ## Checklist
+
    - [ ] Code follows style guidelines
    - [ ] Tests added/updated
    - [ ] Documentation updated
@@ -413,6 +435,7 @@ ctest --output-on-failure
 **Location:** `tests/` directory
 
 **Format:**
+
 ```cpp
 #include <catch2/catch.hpp>
 #include "parser.h"
@@ -420,7 +443,7 @@ ctest --output-on-failure
 TEST_CASE("Lexer tokenizes SELECT statement", "[lexer]") {
     Lexer lexer("SELECT * FROM users");
     QVector<Token> tokens = lexer.tokenize();
-    
+
     REQUIRE(tokens.size() > 0);
     REQUIRE(tokens[0].type == Token::SELECT);
 }
@@ -428,10 +451,10 @@ TEST_CASE("Lexer tokenizes SELECT statement", "[lexer]") {
 TEST_CASE("Parser builds valid SELECT AST", "[parser]") {
     Lexer lexer("SELECT id, name FROM users WHERE age > 25");
     QVector<Token> tokens = lexer.tokenize();
-    
+
     Parser parser(tokens);
     auto ast = parser.parse();
-    
+
     REQUIRE(ast != nullptr);
     REQUIRE(dynamic_cast<SelectStatement*>(ast.get()) != nullptr);
 }
@@ -464,17 +487,18 @@ xdg-open coverage/index.html  # Linux
 ### Code Documentation
 
 **All public methods should have:**
+
 ```cpp
 /**
  * @brief One-line summary
- * 
+ *
  * Detailed explanation of what the method does,
  * how it works, and when to use it.
- * 
+ *
  * @param param1 Description of param1
  * @param param2 Description of param2
  * @return Description of return value
- * 
+ *
  * @throws std::exception Description of exception
  * @note Any important notes
  * @see Related methods
@@ -488,7 +512,7 @@ ReturnType methodName(Type param1, Type param2);
 /**
  * @file query_executor.h
  * @brief SQL query execution engine
- * 
+ *
  * Handles execution of SELECT, INSERT, UPDATE, DELETE,
  * and DDL statements.
  */
@@ -499,6 +523,7 @@ ReturnType methodName(Type param1, Type param2);
 ### Updating Documentation
 
 When making changes:
+
 1. Update inline code comments
 2. Update README.md if user-facing
 3. Update IMPLEMENTATION_PLAN.md if architectural
@@ -518,27 +543,34 @@ When making changes:
 
 ```markdown
 ## Description
+
 Brief description of the issue
 
 ## Steps to Reproduce
+
 1. ...
 2. ...
 3. ...
 
 ## Expected Behavior
+
 What should happen
 
 ## Actual Behavior
+
 What actually happened
 
 ## Environment
+
 - OS: Windows/Linux/macOS
 - Qt Version: 6.x.x
 - Compiler: MSVC/GCC/Clang
 
 ## Logs
 ```
+
 [paste relevant logs]
+
 ```
 
 ## Screenshots
@@ -562,6 +594,7 @@ What actually happened
 See [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) for current development phase.
 
 **Contributing to specific phases:**
+
 - Review phase objectives
 - Check related tasks
 - Ensure changes align with phase goals
@@ -581,6 +614,7 @@ See [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) for current development pha
 ## Recognition
 
 Contributors will be recognized in:
+
 - [CONTRIBUTORS.md](CONTRIBUTORS.md)
 - Release notes
 - GitHub contributors graph

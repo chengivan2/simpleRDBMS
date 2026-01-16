@@ -1,25 +1,31 @@
 # SimpleRDBMS - Project Status
 
-**Project Version:** 0.1.0 (Foundation Phase)  
-**Last Updated:** January 15, 2026  
-**Status:** ✅ Phase 4 Complete - Table Schema & Constraints Management
+**Project Version:** 0.2.0 (Persistence Phase)  
+**Last Updated:** January 16, 2026  
+**Status:** ✅ Phase 5 Complete - Data Persistence & Server Mode
 
 ---
 
 ## Current Status Overview
 
 ### Phase 1: Project Setup & Architecture ✅ COMPLETE
+
 ### Phase 2: SQL Parser & Lexer ✅ COMPLETE
+
 ### Phase 3: Core Data Management (Tables & Storage) ✅ COMPLETE
+
 ### Phase 4: Table Schema & Constraints Management ✅ COMPLETE
 
-**Next Phase**: Phase 5 - Query Execution & Transaction Management
+### Phase 5: Data Persistence & Server Mode ✅ COMPLETE
+
+**Next Phase**: Phase 6 - Transaction Management & Optimization
 
 ---
 
 ## What Has Been Created
 
 ### 📁 Project Structure
+
 ```
 simplerdbms/
 ├── CMakeLists.txt              ✅ Qt6 build configuration
@@ -63,30 +69,31 @@ simplerdbms/
 
 ### 📊 Code Statistics
 
-| Component | Files | Status |
-|-----------|-------|--------|
-| Parser | 5 | ✅ Lexer functional, Parser skeleton |
-| Core | 9 | ✅ Data types defined, interfaces created |
-| Storage | 1 | ✅ Interface defined |
-| UI | 3 | ✅ Scaffolding complete |
-| Utils | 1 | ✅ Logger fully functional |
-| Build | 3 | ✅ CMake + build scripts |
-| Docs | 4 | ✅ README + guides |
-| **Total** | **30+** | |
+| Component | Files   | Status                                    |
+| --------- | ------- | ----------------------------------------- |
+| Parser    | 5       | ✅ Lexer functional, Parser skeleton      |
+| Core      | 9       | ✅ Data types defined, interfaces created |
+| Storage   | 1       | ✅ Interface defined                      |
+| UI        | 3       | ✅ Scaffolding complete                   |
+| Utils     | 1       | ✅ Logger fully functional                |
+| Build     | 3       | ✅ CMake + build scripts                  |
+| Docs      | 4       | ✅ README + guides                        |
+| **Total** | **30+** |                                           |
 
 ### 📝 Documentation
 
-| Document | Status | Content |
-|----------|--------|---------|
-| README.md | ✅ Complete | User guide + Developer guide |
-| BUILDING.md | ✅ Complete | Instructions for 3 platforms |
-| CONTRIBUTING.md | ✅ Complete | Full contribution guidelines |
-| IMPLEMENTATION_PLAN.md | ✅ Complete | 18-phase development roadmap |
-| PROJECT_STATUS.md | ✅ This file | Current status overview |
+| Document               | Status       | Content                      |
+| ---------------------- | ------------ | ---------------------------- |
+| README.md              | ✅ Complete  | User guide + Developer guide |
+| BUILDING.md            | ✅ Complete  | Instructions for 3 platforms |
+| CONTRIBUTING.md        | ✅ Complete  | Full contribution guidelines |
+| IMPLEMENTATION_PLAN.md | ✅ Complete  | 18-phase development roadmap |
+| PROJECT_STATUS.md      | ✅ This file | Current status overview      |
 
 ### 🎯 Features Defined
 
 **SQL Features Ready:**
+
 - ✅ 24 SQL data types defined
 - ✅ 5 constraint types defined (PRIMARY KEY, UNIQUE, NOT NULL, FOREIGN KEY, CHECK)
 - ✅ Transaction statements (BEGIN, COMMIT, ROLLBACK)
@@ -95,6 +102,7 @@ simplerdbms/
 - ✅ JOIN operations (INNER, LEFT, RIGHT, FULL, CROSS)
 
 **UI Features Ready:**
+
 - ✅ Tab-based interface (SQL Editor + Table Manager)
 - ✅ SQL editor placeholder
 - ✅ Table list sidebar
@@ -102,6 +110,7 @@ simplerdbms/
 - ✅ Results table
 
 **System Features Ready:**
+
 - ✅ Centralized logging with file/console output
 - ✅ Singleton logger with macros
 - ✅ Error handling framework
@@ -118,10 +127,12 @@ simplerdbms/
 Phase 2 will enhance the SQL parser to handle all SQL statements:
 
 **Lexer Enhancements:**
+
 - ✅ Already has 50+ keywords recognized
 - Need to complete remaining keyword support
 
 **Parser Implementation:**
+
 - [ ] Complete parseSelectStatement() with WHERE, ORDER BY, LIMIT
 - [ ] Implement parseInsertStatement()
 - [ ] Implement parseUpdateStatement()
@@ -131,6 +142,7 @@ Phase 2 will enhance the SQL parser to handle all SQL statements:
 - [ ] Implement JOIN clause parsing
 
 **Testing:**
+
 - [ ] Unit tests for lexer
 - [ ] Unit tests for parser
 - [ ] Integration tests
@@ -140,6 +152,7 @@ Phase 2 will enhance the SQL parser to handle all SQL statements:
 ### How to Get Started with Phase 2
 
 1. **Review the code:**
+
    ```bash
    cd simplerdbms
    cat src/parser/lexer.h
@@ -161,6 +174,7 @@ Phase 2 will enhance the SQL parser to handle all SQL statements:
 ## Build Status
 
 ### Verified Functionality
+
 - ✅ CMake configuration files valid
 - ✅ Directory structure correct
 - ✅ Logger compiles and runs
@@ -168,44 +182,50 @@ Phase 2 will enhance the SQL parser to handle all SQL statements:
 - ⚠️ Full build requires Qt6 installation
 
 ### Build Requirements
+
 - C++ 17 compiler
 - CMake 3.20+
 - Qt6 (Core, Gui, Widgets, Sql)
 
 ### Build Scripts
+
 - `build.bat` - Windows (Visual Studio 2022)
 - `build.sh` - Linux/macOS (Unix Makefiles)
 
 ### Build Instructions
+
 See [BUILDING.md](BUILDING.md) for detailed platform-specific instructions.
 
 ---
 
 ## File Statistics
 
-| Category | Count |
-|----------|-------|
-| Header Files (.h) | 20 |
-| Source Files (.cpp) | 18 |
-| Configuration | 2 |
-| Documentation | 5 |
-| **Total Files** | **45+** |
+| Category            | Count   |
+| ------------------- | ------- |
+| Header Files (.h)   | 20      |
+| Source Files (.cpp) | 18      |
+| Configuration       | 2       |
+| Documentation       | 5       |
+| **Total Files**     | **45+** |
 
 ---
 
 ## Dependencies
 
 ### Required
+
 - **C++17** Standard Library
 - **Qt6** - Core, Gui, Widgets, Sql modules
 - **CMake 3.20+** - Build system
 
 ### Optional
+
 - **Git** - Version control
 - **Ninja** - Faster builds
 - **Catch2** - Unit testing framework (Phase 16)
 
 ### Not Used (By Design)
+
 - ❌ Third-party ORM libraries
 - ❌ External database libraries
 - ❌ GUI builders
@@ -216,6 +236,7 @@ See [BUILDING.md](BUILDING.md) for detailed platform-specific instructions.
 ## Code Quality
 
 ### Current State
+
 - ✅ Consistent naming conventions
 - ✅ Proper header guards
 - ✅ Organized includes
@@ -223,6 +244,7 @@ See [BUILDING.md](BUILDING.md) for detailed platform-specific instructions.
 - ✅ Error handling framework established
 
 ### Design Patterns Used
+
 - **Singleton:** Logger
 - **Factory:** QueryResult creation
 - **Strategy:** Storage interface
@@ -230,23 +252,26 @@ See [BUILDING.md](BUILDING.md) for detailed platform-specific instructions.
 - **Repository:** TableManager
 
 ### Code Metrics
-| Metric | Target | Current |
-|--------|--------|---------|
-| Code Coverage | 80% | 0% (Phase 1) |
-| Compilation Warnings | 0 | 0 ✅ |
-| Header Includes | Optimized | ✅ |
-| Comment Ratio | 20-30% | 40% ✅ |
+
+| Metric               | Target    | Current      |
+| -------------------- | --------- | ------------ |
+| Code Coverage        | 80%       | 0% (Phase 1) |
+| Compilation Warnings | 0         | 0 ✅         |
+| Header Includes      | Optimized | ✅           |
+| Comment Ratio        | 20-30%    | 40% ✅       |
 
 ---
 
 ## Testing Status
 
 ### Phase 1 Testing
+
 - ✅ Manual verification of structure
 - ✅ CMake configuration tested
 - ✅ Logger functionality tested
 
 ### Phase 2+ Testing Framework
+
 - Will use Catch2 test framework
 - Target: 80%+ code coverage
 - Test location: `tests/`
@@ -267,48 +292,51 @@ These are expected and part of the development plan.
 
 ## Performance Targets
 
-| Operation | Target | Status |
-|-----------|--------|--------|
-| Table Creation | < 100ms | ⏳ Phase 7 |
-| 1K row INSERT | < 500ms | ⏳ Phase 6 |
-| Simple SELECT | < 50ms | ⏳ Phase 6 |
-| Full table scan | < 1s per 10K rows | ⏳ Phase 6 |
-| Index lookup | < 10ms | ⏳ Phase 10 |
-| JOIN (2 tables) | < 100ms | ⏳ Phase 9 |
-| Transaction overhead | < 5% | ⏳ Phase 8 |
+| Operation            | Target            | Status      |
+| -------------------- | ----------------- | ----------- |
+| Table Creation       | < 100ms           | ⏳ Phase 7  |
+| 1K row INSERT        | < 500ms           | ⏳ Phase 6  |
+| Simple SELECT        | < 50ms            | ⏳ Phase 6  |
+| Full table scan      | < 1s per 10K rows | ⏳ Phase 6  |
+| Index lookup         | < 10ms            | ⏳ Phase 10 |
+| JOIN (2 tables)      | < 100ms           | ⏳ Phase 9  |
+| Transaction overhead | < 5%              | ⏳ Phase 8  |
 
 ---
 
 ## Upcoming Milestones
 
-| Milestone | Target Date | Status |
-|-----------|-------------|--------|
-| Phase 2: Parser Complete | Week 2 | ✅ Complete |
-| Phase 3: Data Types Done | Week 2 | ✅ Complete |
-| Phase 4: Constraints Done | Week 3 | ✅ Complete |
-| MVP: Basic CRUD Working | Week 3 | 📅 Phase 5 |
-| Phase 5: Query Execution | Week 4 | 📅 Planned |
-| Phase 6: Transaction Management | Week 4 | 📅 Planned |
-| Phase 10: Indexing Done | Week 5 | 📅 Planned |
-| Phase 14: Full UI Integration | Week 6 | 📅 Planned |
-| Phase 16: 80% Coverage | Week 7 | 📅 Planned |
-| **Version 0.1.0 Release** | **Week 8** | **📅 Planned** |
+| Milestone                       | Target Date | Status         |
+| ------------------------------- | ----------- | -------------- |
+| Phase 2: Parser Complete        | Week 2      | ✅ Complete    |
+| Phase 3: Data Types Done        | Week 2      | ✅ Complete    |
+| Phase 4: Constraints Done       | Week 3      | ✅ Complete    |
+| MVP: Basic CRUD Working         | Week 3      | 📅 Phase 5     |
+| Phase 5: Query Execution        | Week 4      | 📅 Planned     |
+| Phase 6: Transaction Management | Week 4      | 📅 Planned     |
+| Phase 10: Indexing Done         | Week 5      | 📅 Planned     |
+| Phase 14: Full UI Integration   | Week 6      | 📅 Planned     |
+| Phase 16: 80% Coverage          | Week 7      | 📅 Planned     |
+| **Version 0.1.0 Release**       | **Week 8**  | **📅 Planned** |
 
 ---
 
 ## Resources
 
 ### For Users
+
 - [README.md](README.md) - Getting started guide
 - [BUILDING.md](BUILDING.md) - Build instructions
 
 ### For Developers
+
 - [README.md](README.md#developer-guide) - Developer guide
 - [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) - Development roadmap
 - [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines
 - Source code in `src/` with inline comments
 
 ### Build & Development
+
 - [BUILDING.md](BUILDING.md) - All platforms
 - `build.bat` / `build.sh` - Automated build
 - CMakeLists.txt - Full build configuration
@@ -329,6 +357,7 @@ These are expected and part of the development plan.
 ✅ **Phase 1 Complete!**
 
 SimpleRDBMS now has:
+
 - ✅ Complete project structure
 - ✅ Build system ready
 - ✅ All interfaces defined
@@ -338,7 +367,7 @@ SimpleRDBMS now has:
 **Status:** Foundation solid, ready for implementation  
 **Next Step:** Phase 2 - SQL Parser enhancements  
 **Estimated Time to MVP:** 3-4 weeks  
-**Estimated Time to Full Release:** 8 weeks  
+**Estimated Time to Full Release:** 8 weeks
 
 ---
 
